@@ -1,0 +1,10 @@
+Package: cot
+Type: Package
+Title: Commitment of Traders for R
+Version: 0.1
+Date: 2015-09-12
+Author: Andrew B. Collier
+Maintainer: Andrew B. Collier <andrew@exegetic.biz>
+Description: Code for downloading the Commitment of Traders data.
+License: GPL v2
+LazyData: TRUE
