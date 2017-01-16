@@ -5,9 +5,11 @@ library(ggplot2)
 library(gridExtra)
 library(gtable)
 
-TOKEN = "ZUiqTeUwTRzDyRwpFLyd"
+# Insert your Quandl API token here.
+#
+TOKEN = ""
 
-Quandl.auth(TOKEN)
+Quandl.api_key(TOKEN)
 
 # UTILITIES ---------------------------------------------------------------------------------------
 

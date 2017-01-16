@@ -11,3 +11,8 @@ The reports are available in either [long](http://www.cftc.gov/files/dea/cotarch
 This code was originally documented in a blog post entitled [What Can We Learn from the Commitments of Traders Report?](http://www.exegetic.biz/blog/2014/05/what-can-we-learn-from-the-commitments-of-traders-report/).
 
 At present the code has not been set up as a library. It's just a series of scripts in the `scripts` and `demo` directories. Given time and motivation I will make this into a genuine library. Your feedback will be a good motivation!
+
+## Instructions
+
+1. Execute `0-get-cot-data.sh` from project root folder. This will create a `data/` folder containing the downloaded data files.
+2. Execute each of the files in `demo/` in numerical sequence. You'll need to insert a Quandl API key to grab data in the second script.

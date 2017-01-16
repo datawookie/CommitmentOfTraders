@@ -10,13 +10,15 @@ library(stringr)
 library(ggplot2)
 library(reshape2)
 library(lubridate)
+library(dplyr)
 
 # Ignore column 3 since the date format has changed between old and new data
 #
 cot.hist <- read.csv("data/COT-history.txt", stringsAsFactors = FALSE, strip.white = TRUE)
-cot.2014 <- read.csv("data/COT-2014.txt", stringsAsFactors = FALSE, strip.white = TRUE)
+cot.2016 <- read.csv("data/COT-2016.txt", stringsAsFactors = FALSE, strip.white = TRUE)
+cot.2017 <- read.csv("data/COT-2017.txt", stringsAsFactors = FALSE, strip.white = TRUE)
 
-COT <- rbind(cot.hist, cot.2014)
+COT <- bind_rows(cot.hist, cot.2016, cot.2017)
 
 colnames(COT)[1:2] = c("name", "date")
 
@@ -102,6 +104,8 @@ OP$variable <- NULL
 #
 OP <- dcast(OP, name + date + sector ~ type)
 head(OP)
+
+dir.create("fig")
 
 png(sprintf("fig/%s-open-positions.png", label), width = 2000, height = 1200)
 ggplot(OP, aes(x = date)) +
