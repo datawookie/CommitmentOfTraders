@@ -21,29 +21,31 @@
 
 # ------------------------------------------------------------------------------
 
+mkdir -p data
+
 HISTORY=data/COT-history.txt
 
 if [ ! -f $HISTORY ]
 then
-	DATAZIP=deacot1986_2013.zip
+	DATAZIP=deacot1986_2015.zip
 	wget http://www.cftc.gov/files/dea/history/$DATAZIP
 	unzip $DATAZIP
 	rm -f $DATAZIP
-	mv FUT86_13.txt $HISTORY
+	mv FUT86_15.txt $HISTORY
 else
 	echo "got historical data..."
 fi
 
-for YEAR in 2014
+for YEAR in 2016 2017
 do
 	DATAZIP=deacot${YEAR}.zip
-    #
+  #
 	wget http://www.cftc.gov/files/dea/history/$DATAZIP
 
 	DATATXT=annual.txt
-    #
+  #
 	rm -f $DATATXT
-    #
+  #
 	unzip $DATAZIP
 	rm -f $DATAZIP
 
